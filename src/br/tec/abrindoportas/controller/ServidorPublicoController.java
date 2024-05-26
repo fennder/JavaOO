@@ -29,6 +29,7 @@ public class ServidorPublicoController {
       JOptionPane.showMessageDialog(null, servidorPublico, "Lista de Servidores", 1);
     }
   }
+
   public void listarServidorPublico(int matricula){
     boolean encontrou = false;
     for (ServidorPublico servidorPublico : servidores) {
@@ -38,6 +39,7 @@ public class ServidorPublicoController {
         encontrou = true;
         break;
       }
+      
       if(!encontrou){
         JOptionPane.showMessageDialog(null, "A matrícula informada não existe.");
       }
@@ -51,12 +53,12 @@ public class ServidorPublicoController {
         servidores.remove(servidorPublico);
         servidores.add(servidorPublicoUpdate);
         encontrou = true;
-        break;
+      
       }
       if(!encontrou){
         JOptionPane.showMessageDialog(null, "A matrícula informada não existe.");
       }else{
-        System.out.println("A Alteração do Servidor Público com a matrícula " + servidorPublicoUpdate.getMatricula() + " foi realizada com sucesso.");
+        JOptionPane.showMessageDialog(null, "A Alteração do Servidor Público com a matrícula " + servidorPublicoUpdate.getMatricula() + " foi realizada com sucesso.");
       }
     } 
   }
@@ -67,14 +69,22 @@ public class ServidorPublicoController {
       if (servidorPublico.getMatricula() == matricula) {
         servidores.remove(servidorPublico);
         encontrou = true;
-        break;
+        
       }
       if(!encontrou){
         JOptionPane.showMessageDialog(null, "A matrícula informada não existe para ser deletado.");
       }else{
-        System.out.println("A Exclusão do Servidor Público com a matrícula " + matricula + " foi realizada com sucesso.");
+        JOptionPane.showMessageDialog(null, "A Exclusão do Servidor Público com a matrícula " + matricula + " foi realizada com sucesso.");
       }
     }    
+  }
+
+  public void calcularFolhaServidoresPublicos(){
+    double folhaSalarial = 0;
+    for (ServidorPublico servidorPublico : servidores) {
+      folhaSalarial = folhaSalarial + servidorPublico.getSalario();
+      JOptionPane.showMessageDialog(null, folhaSalarial, "Folha salarial", 0);
+    }
   }
 
 }

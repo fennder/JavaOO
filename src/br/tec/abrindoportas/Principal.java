@@ -20,6 +20,7 @@ public class Principal {
 		ServidorPublico servidorPublicoUpdate = new ServidorPublico(5678, "Vicente Santos Frasão", "Analista", null, null, 7500.0, 0, 0, null, null, null, null, null, null, null, null);
 		spc.alterarServidorPublico(servidorPublicoUpdate);
 		spc.listarServidorPublico();
+		spc.calcularFolhaServidoresPublicos();
 
 	}
 
