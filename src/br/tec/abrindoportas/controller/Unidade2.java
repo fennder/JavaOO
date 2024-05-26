@@ -57,13 +57,31 @@ public class Unidade2 {
 
     x = read.nextDouble();
 
-    for (int i = 1; i < 30; i++) {
-      ex = ex + (Math.pow(x, i))/i;
+    for (int i = 1; i <= 3; i++) {
+      ex = ex + (Math.pow(x, i))/fatorial(i);
     }
     System.out.println("O valor de e(" + x + ") é = " + ex);
     read.close();
   }
 
+  public static int fatorial(int i){
+    int resultado = 1;
+    for (int j = 1; j <= i; j++) {
+      resultado *= j;
+    }
+    return resultado;
+  }
+
+  public static double fatorialModificado(int i){
+    return(switch(i){
+      case 0,1 -> 1;
+      default ->{
+        double fatorial = i * fatorialModificado(i-1);
+        yield fatorial;
+      }
+    });
+  }
+  
   public void cartucho(){
     final double VALOR_CARTUCHO = 50.0;
     int quantidade;
@@ -86,4 +104,28 @@ public class Unidade2 {
 
   }
 
+  public void testeString(){
+    String s1 = "Edir Pereira dos Santos";
+    String s2 = "Edir Pereira dos Santos"; 
+    String s3 = "Edir Pereira dos Santos";
+
+    String s4 = new String("Edir Pereira dos Santos");
+    String s5 = new String("Edir Pereira dos Santos");
+
+    System.out.println(s1 == s2);
+    System.out.println(s1 == s4);
+    System.out.println(s1.equals(s4));
+
+    System.out.println(s1.length());
+    System.out.println(s3.charAt(5));
+    
+    System.out.println(s1.substring(4));
+    System.out.println(s1.substring(4,10));
+
+    System.out.println(s1.equalsIgnoreCase(s5));
+    System.out.println(s1.startsWith(s5));
+    System.out.println(s1.endsWith(s5));
+
+    System.out.println(s4.contains("dos"));
+  }
 }

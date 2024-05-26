@@ -1,6 +1,12 @@
 package br.tec.abrindoportas.model;
 
+import br.tec.abrindoportas.controller.Avaliacao;
+
 public class ServidorPublico {
+
+  private final int VALOR_HORA_EXTRA = 45;
+  private static int totalServidores;
+  private Avaliacao avaliacao;
 
   private int matricula;
   private String name;
@@ -18,6 +24,33 @@ public class ServidorPublico {
   private String celular;
   private String cpf;
   private String naturalidade;
+
+  public ServidorPublico() {
+    super();
+  }
+
+  public ServidorPublico(int matricula, String name, String foto, String orgao, String vinculo, double salario,
+      int idade, int tempoContribuicao, String cargo, String lotacao, String exercicio, String email, String telefone,
+      String celular, String cpf, String naturalidade) {
+    this.matricula = matricula;
+    this.name = name;
+    this.foto = foto;
+    this.orgao = orgao;
+    this.vinculo = vinculo;
+    this.salario = salario;
+    this.idade = idade;
+    this.tempoContribuicao = tempoContribuicao;
+    this.cargo = cargo;
+    this.lotacao = lotacao;
+    this.exercicio = exercicio;
+    this.email = email;
+    this.telefone = telefone;
+    this.celular = celular;
+    this.cpf = cpf;
+    this.naturalidade = naturalidade;
+  }
+
+
 
   public int getMatricula() {
     return matricula;
@@ -151,12 +184,37 @@ public class ServidorPublico {
     System.out.println(this.matricula);
   }
 
+  
+  public Avaliacao getAvaliacao() {
+    return avaliacao;
+  }
+
+  public void setAvaliacao(Avaliacao avaliacao) {
+    this.avaliacao = avaliacao;
+  }
+
   public double calcularSalarioHorasExras(int... horasTrabalhadas){
     
     double salarioMensal = 0;
     for(int horasExtras : horasTrabalhadas){
-      salarioMensal = salarioMensal + horasExtras * 45;
+      salarioMensal = salarioMensal + horasExtras * VALOR_HORA_EXTRA;
     }
     return (salario + salarioMensal);
+  }
+
+  public static int getTotalServidores() {
+    return ++totalServidores;
+  }
+
+  public int tamanhoNome(){
+    return this.name.length();
+    // return this.name.substring(0, name.indexOf(" ")).length();
+  }
+
+  public void mostrarPreNome(){
+    System.out.println(this.name.substring(0, name.indexOf(" ")));
+  }
+  public void mostrarSobreNome(){
+    System.out.println(this.name.substring(name.indexOf(" ")+1));
   }
 }
