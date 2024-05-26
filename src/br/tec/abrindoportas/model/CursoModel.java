@@ -1,16 +1,17 @@
 package br.tec.abrindoportas.model;
 
-public class Curso {
+public class CursoModel {
   
   private int idCurso;
   private String name;
   private String formaRealizacao;
   private String ofertante;
-  private String valor;
-  public Curso() {
+  private double valor;
+  
+  public CursoModel() {
     super();
   }
-  public Curso(int idCurso, String name, String formaRealizacao, String ofertante, String valor) {
+  public CursoModel(int idCurso, String name, String formaRealizacao, String ofertante, double valor) {
     super();
     this.idCurso = idCurso;
     this.name = name;
@@ -42,10 +43,10 @@ public class Curso {
   public void setOfertante(String ofertante) {
     this.ofertante = ofertante;
   }
-  public String getValor() {
+  public double getValor() {
     return valor;
   }
-  public void setValor(String valor) {
+  public void setValor(double valor) {
     this.valor = valor;
   }
   @Override
