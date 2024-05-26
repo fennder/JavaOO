@@ -50,8 +50,6 @@ public class ServidorPublico {
     this.naturalidade = naturalidade;
   }
 
-
-
   public int getMatricula() {
     return matricula;
   }
