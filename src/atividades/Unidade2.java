@@ -1,4 +1,4 @@
-package br.tec.abrindoportas.controller;
+package atividades;
 
 import java.util.Scanner;
 

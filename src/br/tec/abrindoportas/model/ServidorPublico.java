@@ -217,4 +217,14 @@ public class ServidorPublico {
   public void mostrarSobreNome(){
     System.out.println(this.name.substring(name.indexOf(" ")+1));
   }
+
+  @Override
+  public String toString() {
+    return "ServidorPublico [VALOR_HORA_EXTRA=" + VALOR_HORA_EXTRA + ", avaliacao=" + avaliacao + ", matricula="
+        + matricula + ", name=" + name + ", foto=" + foto + ", orgao=" + orgao + ", vinculo=" + vinculo + ", salario="
+        + salario + ", idade=" + idade + ", tempoContribuicao=" + tempoContribuicao + ", cargo=" + cargo + ", lotacao="
+        + lotacao + ", exercicio=" + exercicio + ", email=" + email + ", telefone=" + telefone + ", celular=" + celular
+        + ", cpf=" + cpf + ", naturalidade=" + naturalidade + "]";
+  }
+
 }

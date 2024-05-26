@@ -2,8 +2,8 @@ package br.tec.abrindoportas;
 
 import javax.swing.JOptionPane;
 
+import atividades.Unidade2;
 import br.tec.abrindoportas.controller.Avaliacao;
-import br.tec.abrindoportas.controller.Unidade2;
 import br.tec.abrindoportas.model.ServidorPublico;
 
 /*
