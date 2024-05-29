@@ -5,26 +5,26 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import br.tec.abrindoportas.model.ServidorPublico;
+import atividades.Avaliacao;
+import br.tec.abrindoportas.model.ServidorPublicoModel;
 
 public class ServidorPublicoController {
   Avaliacao [] avaliacao = {Avaliacao.EXCELENTE, Avaliacao.BOM, Avaliacao.REGULAR, Avaliacao.INSATISFATÓTIO};
 
-  List<ServidorPublico> servidores = new LinkedList<>();
+  List<ServidorPublicoModel> servidores = new LinkedList<>();
 
   //Métodos CRUD SERVIDOR PUBLICO
   public void adicionarServidorPublico(){
-    ServidorPublico servidorPublico = new ServidorPublico();
+    ServidorPublicoModel servidorPublico = new ServidorPublicoModel();
     servidorPublico.setMatricula(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a matrícula:")));
     servidorPublico.setName(JOptionPane.showInputDialog(null, "Digite o nome:"));
-    servidorPublico.setCargo(JOptionPane.showInputDialog(null, "Digite o cargo:"));
     servidorPublico.setSalario(Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o salário:")));
 
     servidores.add(servidorPublico);
   }
 
   public void listarServidorPublico(){
-    for(ServidorPublico servidorPublico : servidores){
+    for(ServidorPublicoModel servidorPublico : servidores){
       // System.out.println("Todos ====> " + servidorPublico);
       JOptionPane.showMessageDialog(null, servidorPublico, "Lista de Servidores", 1);
     }
@@ -32,7 +32,7 @@ public class ServidorPublicoController {
 
   public void listarServidorPublico(int matricula){
     boolean encontrou = false;
-    for (ServidorPublico servidorPublico : servidores) {
+    for (ServidorPublicoModel servidorPublico : servidores) {
       if (servidorPublico.getMatricula() == matricula) {
         // System.out.println("Um ====> " + servidorPublico);
         JOptionPane.showMessageDialog(null, servidorPublico);
@@ -46,9 +46,9 @@ public class ServidorPublicoController {
     }
   }
 
-  public void alterarServidorPublico(ServidorPublico servidorPublicoUpdate){
+  public void alterarServidorPublico(ServidorPublicoModel servidorPublicoUpdate){
     boolean encontrou = false;
-    for (ServidorPublico servidorPublico : servidores) {
+    for (ServidorPublicoModel servidorPublico : servidores) {
       if (servidorPublico.getMatricula() == servidorPublicoUpdate.getMatricula()) {
         servidores.remove(servidorPublico);
         servidores.add(servidorPublicoUpdate);
@@ -65,7 +65,7 @@ public class ServidorPublicoController {
 
   public void deletarServidorPublico(int matricula){
     boolean encontrou = false;
-    for (ServidorPublico servidorPublico : servidores) {
+    for (ServidorPublicoModel servidorPublico : servidores) {
       if (servidorPublico.getMatricula() == matricula) {
         servidores.remove(servidorPublico);
         encontrou = true;
@@ -81,7 +81,7 @@ public class ServidorPublicoController {
 
   public void calcularFolhaServidoresPublicos(){
     double folhaSalarial = 0;
-    for (ServidorPublico servidorPublico : servidores) {
+    for (ServidorPublicoModel servidorPublico : servidores) {
       folhaSalarial = folhaSalarial + servidorPublico.getSalario();
       JOptionPane.showMessageDialog(null, folhaSalarial, "Folha salarial", 0);
     }

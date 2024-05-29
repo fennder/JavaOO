@@ -7,7 +7,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import br.tec.abrindoportas.model.CursoModel;
-import br.tec.abrindoportas.model.ServidorPublico;
+import br.tec.abrindoportas.model.ServidorPublicoModel;
 
 public class CursoController {
 

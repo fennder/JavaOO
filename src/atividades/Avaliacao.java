@@ -1,4 +1,4 @@
-package br.tec.abrindoportas.controller;
+package atividades;
 
 public enum Avaliacao {
   EXCELENTE,
