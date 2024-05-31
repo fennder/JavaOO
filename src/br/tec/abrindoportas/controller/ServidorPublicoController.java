@@ -7,8 +7,12 @@ import javax.swing.JOptionPane;
 
 import atividades.Avaliacao;
 import br.tec.abrindoportas.model.ServidorPublicoModel;
+import br.tec.abrindoportas.model.subclass.ComissionadoModel;
+import br.tec.abrindoportas.model.subclass.EstatutarioModel;
+import br.tec.abrindoportas.model.subclass.TemporarioModel;
+import br.tec.abrindoportas.service.APIServidorPublico;
 
-public class ServidorPublicoController {
+public class ServidorPublicoController implements APIServidorPublico{
   Avaliacao [] avaliacao = {Avaliacao.EXCELENTE, Avaliacao.BOM, Avaliacao.REGULAR, Avaliacao.INSATISFATÓTIO};
 
   List<ServidorPublicoModel> servidores = new LinkedList<>();
@@ -18,8 +22,6 @@ public class ServidorPublicoController {
     ServidorPublicoModel servidorPublico = new ServidorPublicoModel();
     servidorPublico.setMatricula(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a matrícula:")));
     servidorPublico.setName(JOptionPane.showInputDialog(null, "Digite o nome:"));
-    servidorPublico.setSalario(Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o salário:")));
-
     servidores.add(servidorPublico);
   }
 
@@ -85,6 +87,36 @@ public class ServidorPublicoController {
       folhaSalarial = folhaSalarial + servidorPublico.getSalario();
       JOptionPane.showMessageDialog(null, folhaSalarial, "Folha salarial", 0);
     }
+  }
+
+  public void verificaTipoServidorPublico(ServidorPublicoModel servidorPublicoModel){
+    if (servidorPublicoModel instanceof EstatutarioModel) {
+      System.out.println("Estatutatio");
+    }else if (servidorPublicoModel instanceof ComissionadoModel) {
+      System.out.println("Comissionado");
+    }else if (servidorPublicoModel instanceof TemporarioModel){
+      System.out.println("Temporário");
+    }else{
+      System.out.println("Não foi especializado. Permanece como servidor ");
+    }
+  }
+
+  @Override
+  public void adicionarCursoServidorPublico(int matricula, int idCurso) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'adicionarCursoServidorPublico'");
+  }
+
+  @Override
+  public void deletarCursoServidorPublico(int matricula, int idCurso) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'deletarCursoServidorPublico'");
+  }
+
+  @Override
+  public void listarCursosServidorPublico(int matricula) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'listarCursosServidorPublico'");
   }
 
 }

@@ -4,6 +4,7 @@ import br.tec.abrindoportas.model.ServidorPublicoModel;
 
 public class TemporarioModel extends ServidorPublicoModel{
   
+  private static final int VALOR_HORA_EXTRA = 35;
   private String contrato;
   private double salario;
 
@@ -11,8 +12,8 @@ public class TemporarioModel extends ServidorPublicoModel{
     super();
   }
 
-  public TemporarioModel(String contrato, double salario, int matricula, String name, String email) {
-    super(matricula, name, salario, email);
+  public TemporarioModel(String contrato, double salario, int matricula, String name, String cargo, String email) {
+    super(matricula, name, cargo, salario, email);
     this.contrato = contrato;
     this.salario = salario;
   }
@@ -37,5 +38,12 @@ public class TemporarioModel extends ServidorPublicoModel{
   public String toString() {
     return "TemporarioModel [contrato=" + contrato + ", salario=" + salario + "]";
   }
-  
+  public double calcularSalarioHorasExras(int horasTrabalhadas){
+    
+    double salarioMensal = 0;
+    
+      salarioMensal = salarioMensal + horasTrabalhadas * VALOR_HORA_EXTRA;
+    
+    return (salario + salarioMensal);
+  }
 }

@@ -7,9 +7,9 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import br.tec.abrindoportas.model.CursoModel;
-import br.tec.abrindoportas.model.ServidorPublicoModel;
+import br.tec.abrindoportas.service.APICurso;
 
-public class CursoController {
+public class CursoController implements APICurso{
 
   List<CursoModel> cursos = new LinkedList<>();
 
@@ -64,7 +64,8 @@ public class CursoController {
     } 
   }
 
-  public void excluirCurso(int idCurso){
+  @Override
+  public void deletarCurso(int idCurso) {
     boolean encontrou = false;
     for (CursoModel cursoModel : cursos) {
       if (cursoModel.getIdCurso() == idCurso) {
@@ -78,6 +79,30 @@ public class CursoController {
         JOptionPane.showMessageDialog(null, "A Exclusão do Curso com o Id " + idCurso + " foi realizada com sucesso.");
       }
     }    
+  }
+
+  @Override
+  public void calcularFolhaServidoresPublicos() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'calcularFolhaServidoresPublicos'");
+  }
+
+  @Override
+  public void adicionarServidorCurso(int idCurso, int matricula) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'adicionarServidorCurso'");
+  }
+
+  @Override
+  public void deletarServidorCurso(int idCurso, int matricula) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'deletarServidorCurso'");
+  }
+
+  @Override
+  public void listarServidoresCurso(int idCurso) {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'listarServidoreCurso'");
   }
   
 }

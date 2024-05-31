@@ -11,9 +11,9 @@ public class EstatutarioModel extends ServidorPublicoModel{
     super();
   }
 
-  public EstatutarioModel(int tempoServico, double salarioBase, int matricula, String name, double salario,
+  public EstatutarioModel(int tempoServico, double salarioBase, int matricula, String name, String cargo, double salario,
   String email) {
-    super(matricula, name, salario, email);
+    super(matricula, name, cargo, salario, email);
     this.tempoServico = tempoServico;
     this.salarioBase = salarioBase;
   }

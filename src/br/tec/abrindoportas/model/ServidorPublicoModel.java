@@ -4,15 +4,19 @@ import java.util.LinkedList;
 import java.util.List;
 
 import atividades.Avaliacao;
+import br.tec.abrindoportas.abstracao.PeopleAbstract;
 
-public class ServidorPublicoModel {
+public class ServidorPublicoModel extends PeopleAbstract{
 
-   private Avaliacao avaliacao;
+  private static final int VALOR_HORA_EXTRA = 45;
+
+  private Avaliacao avaliacao;
 
   protected int matricula;
   protected String name;
-  private double salario;
-  private String email;
+  protected String cargo;
+  protected double salario;
+  protected String email;
 
   // REuso - Associação
   private List<CursoModel> cursos = new LinkedList<CursoModel>();
@@ -27,10 +31,10 @@ public class ServidorPublicoModel {
     super();
   }
 
-  public ServidorPublicoModel(int matricula, String name, double salario,
-      String email) {
+  public ServidorPublicoModel(int matricula, String name, String cargo, double salario, String email) {
     this.matricula = matricula;
     this.name = name;
+    this.cargo = cargo;
     this.salario = salario;
     this.email = email;
   }
@@ -80,18 +84,26 @@ public class ServidorPublicoModel {
   }
 
   
-  // public double calcularSalarioHorasExras(int... horasTrabalhadas){
+  public double calcularSalarioHorasExras(int... horasTrabalhadas){
     
-  //   double salarioMensal = 0;
-  //   for(int horasExtras : horasTrabalhadas){
-  //     salarioMensal = salarioMensal + horasExtras * VALOR_HORA_EXTRA;
-  //   }
-  //   return (salario + salarioMensal);
-  // }
+    double salarioMensal = 0;
+    for(int horasExtras : horasTrabalhadas){
+      salarioMensal = salarioMensal + horasExtras * VALOR_HORA_EXTRA;
+    }
+    return (salario + salarioMensal);
+  }
 
   // public static int getTotalServidores() {
   //   return ++totalServidores;
   // }
+
+  public String getCargo() {
+    return cargo;
+  }
+
+  public void setCargo(String cargo) {
+    this.cargo = cargo;
+  }
 
   public void getCursos() {
     for (CursoModel cursoModel : cursos) 
@@ -134,9 +146,17 @@ public class ServidorPublicoModel {
 
   @Override
   public String toString() {
-    return "ServidorPublico [avaliacao=" + avaliacao + ", matricula=" + matricula 
-    + ", name=" + name + ", salario=" + salario + ", email=" + email 
-    + "]";
+    return "ServidorPublicoModel [avaliacao=" + avaliacao + ", matricula=" + matricula + ", name=" + name + ", cargo="
+        + cargo + ", salario=" + salario + ", email=" + email + "]";
+  }
+
+  @Override
+  public void exibirInformacoes() {
+    primeiroNome = name.substring(0, name.indexOf(" "));
+    ultimoNome = name.substring(name.indexOf(" ")+1);
+
+    System.out.println("Primeiro nome: " + primeiroNome);
+    System.out.println("Ultimo nome: " + ultimoNome);
   }
 
 }

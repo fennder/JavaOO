@@ -11,10 +11,11 @@ public class ComissionadoModel extends ServidorPublicoModel {
     super();
   }
 
-  public ComissionadoModel(double comissao, double salarioFixo) {
-    super();
+  public ComissionadoModel(double comissao, double salarioFixo, int matricula, String name, String cargo, double salario, String email) {
+    super(matricula, name, cargo, salario, email);
     this.comissao = comissao;
     this.salarioFixo = salarioFixo;
+    super.salario = this.comissao + this.salarioFixo;
   }
 
   public double getComissao() {

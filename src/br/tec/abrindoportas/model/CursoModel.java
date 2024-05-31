@@ -1,5 +1,8 @@
 package br.tec.abrindoportas.model;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class CursoModel {
   
   private int idCurso;
@@ -19,6 +22,9 @@ public class CursoModel {
     this.ofertante = ofertante;
     this.valor = valor;
   }
+
+  private List<ServidorPublicoModel> servidorPublicoModels = new LinkedList<ServidorPublicoModel>();
+
   public int getIdCurso() {
     return idCurso;
   }
