@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import atividades.Avaliacao;
+import br.tec.abrindoportas.model.CursoModel;
 import br.tec.abrindoportas.model.ServidorPublicoModel;
 import br.tec.abrindoportas.model.subclass.ComissionadoModel;
 import br.tec.abrindoportas.model.subclass.EstatutarioModel;
@@ -103,8 +104,24 @@ public class ServidorPublicoController implements APIServidorPublico{
 
   @Override
   public void adicionarCursoServidorPublico(int matricula, int idCurso) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'adicionarCursoServidorPublico'");
+    boolean encontrou = false;
+    for (ServidorPublicoModel servidorPublico : servidores) {
+      if (servidorPublico.getMatricula() == matricula) {
+        
+        for (CursoModel cursoModel : cursoController.cursos) {
+          if (cursoModel.getIdCurso() == idCurso) {
+            servidorPublico.setCursos(cursoModel);
+            encontrou = true;
+            break;
+          }
+        }
+      }
+      if(!encontrou){
+        JOptionPane.showMessageDialog(null, "A matrícula informada não existe para ser deletado.");
+      }else{
+        JOptionPane.showMessageDialog(null, "O curso foi incluído no Servidor Público com a matrícula " + matricula + " foi realizada com sucesso.");
+      }
+    }    
   }
 
   @Override

@@ -19,20 +19,24 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		ServidorPublicoController spc = new ServidorPublicoController();
-		spc.adicionarServidorPublico();
-		spc.adicionarServidorPublico();
+		ServidorPublicoController servidorPublicoController = new ServidorPublicoController();
+		servidorPublicoController.adicionarServidorPublico();
+		servidorPublicoController.adicionarServidorPublico();
 		System.out.println( "02 Servidores ");
-		spc.listarServidorPublico();
+		servidorPublicoController.listarServidorPublico();
 
-		CursoController cc = new CursoController();
-		cc.adicionarCurso();
-		cc.listarCursos();
-		cc.listarCurso(1);
-		cc.deletarCurso(2);
-		CursoModel cursoModelUpdate = new CursoModel(2, "Java Básico", "Licitação", "ENAP", 57.59);
-		cc.alterarCurso(cursoModelUpdate);
-		cc.listarCursos();
+		CursoController cursoController = new CursoController();
+		cursoController.adicionarCurso();
+		cursoController.adicionarCurso();
+		System.out.println(" 02 Cursos ");
+		cursoController.listarCursos();
+
+		servidorPublicoController.adicionarCursoServidorPublico(1, 10);
+		servidorPublicoController.adicionarCursoServidorPublico(1, 20);
+		
+		servidorPublicoController.adicionarCursoServidorPublico(1, 10);
+		servidorPublicoController.adicionarCursoServidorPublico(1, 20);
+
 
 		// ServidorPublicoModel servidorPublicoModel = new ServidorPublicoModel(1, "Edir", null, null, "Servidor", 4500, 0, 0, null, "Brasília", null, "fennder@gmail.com", null, null);
 		
