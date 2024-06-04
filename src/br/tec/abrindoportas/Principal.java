@@ -2,6 +2,7 @@ package br.tec.abrindoportas;
 
 import javax.swing.JOptionPane;
 
+import br.tec.abrindoportas.controller.App;
 import br.tec.abrindoportas.controller.CursoController;
 import br.tec.abrindoportas.controller.ServidorPublicoController;
 import br.tec.abrindoportas.model.CursoModel;
@@ -19,64 +20,26 @@ public class Principal {
 
 	public static void main(String[] args) {
 
-		ServidorPublicoController servidorPublicoController = new ServidorPublicoController();
-		servidorPublicoController.adicionarServidorPublico();
-		servidorPublicoController.adicionarServidorPublico();
-		System.out.println( "02 Servidores ");
-		servidorPublicoController.listarServidorPublico();
+		App aplicacao = new App();
+		aplicacao.adicionarServidorPublico();
+		aplicacao.adicionarServidorPublico();
+		System.out.println(" 02 Servidores Cadastrados ");
+		aplicacao.listarServidoresPublicos();
 
-		CursoController cursoController = new CursoController();
-		cursoController.adicionarCurso();
-		cursoController.adicionarCurso();
-		System.out.println(" 02 Cursos ");
-		cursoController.listarCursos();
+		aplicacao.adicionarCurso();
+		aplicacao.adicionarCurso();
+		System.out.println(" 02 Cursos Cadastrados");
+		aplicacao.listarCursos();
 
-		servidorPublicoController.adicionarCursoServidorPublico(1, 10);
-		servidorPublicoController.adicionarCursoServidorPublico(1, 20);
-		
-		servidorPublicoController.adicionarCursoServidorPublico(1, 10);
-		servidorPublicoController.adicionarCursoServidorPublico(1, 20);
+		aplicacao.adicionarCursoServidorPublico(1, 10);
+		aplicacao.adicionarCursoServidorPublico(1, 20);
+		aplicacao.adicionarCursoServidorPublico(2, 10);
+		aplicacao.adicionarCursoServidorPublico(2, 20);
 
+		System.out.println(" Listagem de Cursos ");
+		aplicacao.listarCursosServidorPublico(1);
+		aplicacao.listarCursosServidorPublico(2);
 
-		// ServidorPublicoModel servidorPublicoModel = new ServidorPublicoModel(1, "Edir", null, null, "Servidor", 4500, 0, 0, null, "Brasília", null, "fennder@gmail.com", null, null);
-		
-		// CursoModel cursoModel = new CursoModel(1, "Curso Java", "Presencial", "ENAP", 57.59);
-		// servidorPublicoModel.setCursos(cursoModel);
-		// servidorPublicoModel.getCursos();
-				
-		// TelefoneModel telefoneModel = new TelefoneModel("Pessoal", "61 98406-7817");
-		// servidorPublicoModel.setTelefones(telefoneModel);
-		// servidorPublicoModel.getTelefones();
-		
-		// DependenteModel dependenteModel = new DependenteModel("Vicente Frasão", "108.456.789-89", "Masculino", 4);
-		// servidorPublicoModel.setDependentes(dependenteModel);
-		// servidorPublicoModel.getDependentes();
-
-		// EstatutarioModel estatutarioModel = new EstatutarioModel(2, 0, 0, "Edir Pereira dos Snatos", "Técnico em Informática", 4500, "fennder@gmail.com");
-		// estatutarioModel.setTempoServico(2);
-		// estatutarioModel.setSalarioBase(45877);
-		// estatutarioModel.setName("Edir Pereira dos Santos");
-		// System.out.println(estatutarioModel);
-
-		// ComissionadoModel comissionadoModel = new ComissionadoModel(564, 9500, 85,"Edir Pereira dos Santos", "Analista técnico", 5222, "edir.pereira@gmail.com");
-		// comissionadoModel.imprimeDados();
-
-		// TemporarioModel temporarioModel = new TemporarioModel("2 anos", 4586, 25, "Vicente Lima Frasão", "Analista em TI", "vicente.frasao@gmail.com");
-		// System.out.println(temporarioModel.getMatricula());
-		// System.out.println(temporarioModel.getName());
-		// System.out.println(temporarioModel.calcularSalarioHorasExras(20,52,89));
-		// System.out.println(temporarioModel.calcularSalarioHorasExras(20));
-		
-		// ServidorPublicoModel servidorPublicoModel = new ComissionadoModel(564, 5000, 85, "Edir Pereira dos Santos", "Analista de TI", 4500, "edir.teste@gmail.com");
-		// servidorPublicoModel = new EstatutarioModel(0, 3500, 23, "Edir Pereira", "Analista de Teste", 6500, "edi@gmail.com");
-
-		// System.out.println(servidorPublicoModel);
-		// System.out.println(	((EstatutarioModel)servidorPublicoModel).getTempoServico());
-		// System.out.println(	((EstatutarioModel)servidorPublicoModel).getSalarioBase());
-		// servidorPublicoModel.exibirInformacoes();
-
-		// ServidorPublicoController servidorPublicoController = new ServidorPublicoController();
-		// servidorPublicoController.verificaTipoServidorPublico(servidorPublicoModel);
 	}
 
 }

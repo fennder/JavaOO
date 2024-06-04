@@ -106,8 +106,7 @@ public class ServidorPublicoModel extends PeopleAbstract{
   }
 
   public void getCursos() {
-    for (CursoModel cursoModel : cursos) 
-      System.out.println(cursos);
+    System.out.println(cursos);
   }
 
   public void setCursos(CursoModel curso) {

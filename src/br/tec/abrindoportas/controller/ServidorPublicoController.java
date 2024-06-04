@@ -20,74 +20,27 @@ public class ServidorPublicoController implements APIServidorPublico{
 
   //Métodos CRUD SERVIDOR PUBLICO
   public void adicionarServidorPublico(){
-    ServidorPublicoModel servidorPublico = new ServidorPublicoModel();
-    servidorPublico.setMatricula(Integer.parseInt(JOptionPane.showInputDialog(null, "Digite a matrícula:")));
-    servidorPublico.setName(JOptionPane.showInputDialog(null, "Digite o nome:"));
-    servidores.add(servidorPublico);
+    
   }
 
-  public void listarServidorPublico(){
-    for(ServidorPublicoModel servidorPublico : servidores){
-      // System.out.println("Todos ====> " + servidorPublico);
-      JOptionPane.showMessageDialog(null, servidorPublico, "Lista de Servidores", 1);
-    }
+  public void listarServidoresPublicos(){
+    
   }
 
   public void listarServidorPublico(int matricula){
-    boolean encontrou = false;
-    for (ServidorPublicoModel servidorPublico : servidores) {
-      if (servidorPublico.getMatricula() == matricula) {
-        // System.out.println("Um ====> " + servidorPublico);
-        JOptionPane.showMessageDialog(null, servidorPublico);
-        encontrou = true;
-        break;
-      }
-      
-      if(!encontrou){
-        JOptionPane.showMessageDialog(null, "A matrícula informada não existe.");
-      }
-    }
+    
   }
 
   public void alterarServidorPublico(ServidorPublicoModel servidorPublicoUpdate){
-    boolean encontrou = false;
-    for (ServidorPublicoModel servidorPublico : servidores) {
-      if (servidorPublico.getMatricula() == servidorPublicoUpdate.getMatricula()) {
-        servidores.remove(servidorPublico);
-        servidores.add(servidorPublicoUpdate);
-        encontrou = true;
-      
-      }
-      if(!encontrou){
-        JOptionPane.showMessageDialog(null, "A matrícula informada não existe.");
-      }else{
-        JOptionPane.showMessageDialog(null, "A Alteração do Servidor Público com a matrícula " + servidorPublicoUpdate.getMatricula() + " foi realizada com sucesso.");
-      }
-    } 
+     
   }
 
   public void deletarServidorPublico(int matricula){
-    boolean encontrou = false;
-    for (ServidorPublicoModel servidorPublico : servidores) {
-      if (servidorPublico.getMatricula() == matricula) {
-        servidores.remove(servidorPublico);
-        encontrou = true;
         
-      }
-      if(!encontrou){
-        JOptionPane.showMessageDialog(null, "A matrícula informada não existe para ser deletado.");
-      }else{
-        JOptionPane.showMessageDialog(null, "A Exclusão do Servidor Público com a matrícula " + matricula + " foi realizada com sucesso.");
-      }
-    }    
   }
 
   public void calcularFolhaServidoresPublicos(){
-    double folhaSalarial = 0;
-    for (ServidorPublicoModel servidorPublico : servidores) {
-      folhaSalarial = folhaSalarial + servidorPublico.getSalario();
-      JOptionPane.showMessageDialog(null, folhaSalarial, "Folha salarial", 0);
-    }
+    
   }
 
   public void verificaTipoServidorPublico(ServidorPublicoModel servidorPublicoModel){
@@ -104,24 +57,7 @@ public class ServidorPublicoController implements APIServidorPublico{
 
   @Override
   public void adicionarCursoServidorPublico(int matricula, int idCurso) {
-    boolean encontrou = false;
-    for (ServidorPublicoModel servidorPublico : servidores) {
-      if (servidorPublico.getMatricula() == matricula) {
-        
-        for (CursoModel cursoModel : cursoController.cursos) {
-          if (cursoModel.getIdCurso() == idCurso) {
-            servidorPublico.setCursos(cursoModel);
-            encontrou = true;
-            break;
-          }
-        }
-      }
-      if(!encontrou){
-        JOptionPane.showMessageDialog(null, "A matrícula informada não existe para ser deletado.");
-      }else{
-        JOptionPane.showMessageDialog(null, "O curso foi incluído no Servidor Público com a matrícula " + matricula + " foi realizada com sucesso.");
-      }
-    }    
+       
   }
 
   @Override

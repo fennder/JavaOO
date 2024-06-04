@@ -6,7 +6,7 @@ public interface APIServidorPublico {
   
   public void adicionarServidorPublico();
 
-  public void listarServidorPublico();
+  public void listarServidoresPublicos();
 
   public void listarServidorPublico(int matricula);
   
