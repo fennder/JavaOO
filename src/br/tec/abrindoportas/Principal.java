@@ -39,7 +39,11 @@ public class Principal {
 		System.out.println(" Listagem de Cursos ");
 		aplicacao.listarCursosServidorPublico(1);
 		aplicacao.listarCursosServidorPublico(2);
-
+		
+		System.out.println(" Listagem de Servidore ");
+		aplicacao.adicionarServidorCurso(10, 1);
+		aplicacao.adicionarServidorCurso(20, 1);
+		
 	}
 
 }

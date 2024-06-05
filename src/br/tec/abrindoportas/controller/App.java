@@ -121,8 +121,7 @@ public class App implements APIServidorPublico, APICurso {
 
   @Override
   public void deletarCursoServidorPublico(int matricula, int idCurso) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'deletarCursoServidorPublico'");
+    
   }
 
   @Override
@@ -212,8 +211,25 @@ public class App implements APIServidorPublico, APICurso {
 
   @Override
   public void adicionarServidorCurso(int idCurso, int matricula) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'adicionarServidorCurso'");
+    boolean encontrou = false;
+    for (CursoModel cursoModel : cursoModels) {
+      if (cursoModel.getIdCurso() == idCurso) {
+        
+        for (ServidorPublicoModel servidorPublicoModel : servidorPublicoModels) {
+          if (servidorPublicoModel.getMatricula() == matricula) {
+            cursoModels.add(cursoModel);
+            encontrou = true;
+            break;
+      }
+    }
+        
+      }
+      if(!encontrou){
+        System.out.println("O Id informado não existe para ser deletado.");
+      }else{
+        System.out.println("A Exclusão do Curso com o Id " + idCurso + " foi realizada com sucesso.");
+      }
+    }  
   }
 
   @Override
@@ -224,8 +240,13 @@ public class App implements APIServidorPublico, APICurso {
 
   @Override
   public void listarServidoresCurso(int idCurso) {
-    // TODO Auto-generated method stub
-    throw new UnsupportedOperationException("Unimplemented method 'listarServidoresCurso'");
+    for (CursoModel cursoModel : cursoModels) {
+      if (cursoModel.getIdCurso() == idCurso) {
+        System.out.println(cursoModel);
+        System.out.println("Servidores");
+        cursoModel.getServidorPublicoModels();
+      }
+    }
   } 
   
 }

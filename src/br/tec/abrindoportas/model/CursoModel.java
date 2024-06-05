@@ -55,6 +55,14 @@ public class CursoModel {
   public void setValor(double valor) {
     this.valor = valor;
   }
+
+  public void getServidorPublicoModels() {
+    System.out.println(servidorPublicoModels);
+  }
+  public void setServidorPublicoModels(ServidorPublicoModel servidorPublicoModel) {
+    servidorPublicoModels.add(servidorPublicoModel);
+  }
+  
   @Override
   public String toString() {
     return "Curso [idCurso=" + idCurso + ", name=" + name + ", formaRealizacao=" + formaRealizacao + ", ofertante="
