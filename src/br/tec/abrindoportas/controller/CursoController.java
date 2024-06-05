@@ -14,7 +14,6 @@ public class CursoController implements APICurso{
   List<CursoModel> cursos = new LinkedList<>();
 
   public void adicionarCurso(){
-
        
   }
 

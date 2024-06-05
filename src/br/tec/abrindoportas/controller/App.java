@@ -121,7 +121,20 @@ public class App implements APIServidorPublico, APICurso {
 
   @Override
   public void deletarCursoServidorPublico(int matricula, int idCurso) {
-    
+    boolean encontrou = false;
+    for (ServidorPublicoModel servidorPublico : servidorPublicoModels) {
+      if (servidorPublico.getMatricula() == matricula) {
+        servidorPublicoModels.remove(servidorPublico);
+        encontrou = true;
+        
+      }
+      if(!encontrou){
+        System.out.println("funcao deletetarServidorPublico");
+        System.out.println("A matrícula informada não existe para ser deletado.");
+      }else{
+        System.out.println("A Exclusão do Servidor Público com a matrícula " + matricula + " foi realizada com sucesso.");
+      }
+    }
   }
 
   @Override
@@ -145,7 +158,6 @@ public class App implements APIServidorPublico, APICurso {
     cursoModel.setFormaRealizacao(JOptionPane.showInputDialog(null, "Digite o Forma de formalização: "));
     cursoModel.setOfertante(JOptionPane.showInputDialog(null, "Digite o Ofertante: "));
     cursoModel.setValor(Double.parseDouble(JOptionPane.showInputDialog(null, "Digite o valor do curso: ")));
-
     cursoModels.add(cursoModel); 
   }
 
@@ -167,7 +179,6 @@ public class App implements APIServidorPublico, APICurso {
         encontrou = true;
         break;
       }
-      
       if(!encontrou){
         System.out.println("O código informado não existe.");
       }
@@ -182,7 +193,6 @@ public class App implements APIServidorPublico, APICurso {
         cursoModels.remove(cursoModel);
         cursoModels.add(cursoModelUpdate);
         encontrou = true;
-      
       }
       if(!encontrou){
         System.out.println("O Id informado não existe.");
@@ -199,7 +209,6 @@ public class App implements APIServidorPublico, APICurso {
       if (cursoModel.getIdCurso() == idCurso) {
         cursoModels.remove(cursoModel);
         encontrou = true;
-        
       }
       if(!encontrou){
         System.out.println("O Id informado não existe para ser deletado.");
@@ -220,9 +229,8 @@ public class App implements APIServidorPublico, APICurso {
             cursoModels.add(cursoModel);
             encontrou = true;
             break;
-      }
-    }
-        
+          }
+        }
       }
       if(!encontrou){
         System.out.println("O Id informado não existe para ser deletado.");
@@ -248,5 +256,4 @@ public class App implements APIServidorPublico, APICurso {
       }
     }
   } 
-  
 }
