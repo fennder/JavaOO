@@ -18,7 +18,7 @@ public class ServidorPublicoModel extends PeopleAbstract{
   protected double salario;
   protected String email;
 
-  // REuso - Associação
+  // Reuso - Associação
   private List<CursoModel> cursos = new LinkedList<CursoModel>();
 
   //Reuso - Agregação

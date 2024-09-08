@@ -25,7 +25,7 @@ public class ServidorPublicoController implements APIServidorPublico{
 
   public void listarServidoresPublicos(){
     
-  }
+  } 
 
   public void listarServidorPublico(int matricula){
     

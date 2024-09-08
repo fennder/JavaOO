@@ -1,0 +1,52 @@
+[
+	{
+		"nome": "Edir Pereira dos Santos",
+		"idade": 42,
+		"cargo": "Analista de Tecnologia",
+		"departamento": "Divisão de Sistemas",
+		"salario": 4500.00,
+		"endereco": {
+			"quadra": 1005,
+			"alameda": 13,
+			"complemento": "QI 7",
+			"bairro": "Plano Diretor Sul",
+			"cidade": "Palmas",
+			"uf": "Tocantins",
+			"cep": "77018-488"
+		}
+		
+	},
+	{
+		"nome": "Vicente Lima Pereira Santos Frasão",
+		"idade": 4,
+		"cargo": "Empresário",
+		"departamento": "Vestimento",
+		"salario": 10500.00,
+		"endereco": {
+			"quadra": 1005,
+			"alameda": 13,
+			"complemento": "QI 7",
+			"bairro": "Plano Diretor Sul",
+			"cidade": "Palmas",
+			"uf": "Tocantins",
+			"cep": "77018-488"
+		}
+			
+	},
+	{
+		"nome": "Vicente Lima Pereira Santos Frasão",
+		"idade": 4,
+		"cargo": "Empresário",
+		"departamento": "Vestimento",
+		"salario": 10500.00,
+		"endereco": {
+			"quadra": 1005,
+			"alameda": 13,
+			"complemento": "QI 7",
+			"bairro": "Plano Diretor Sul",
+			"cidade": "Palmas",
+			"uf": "Tocantins",
+			"cep": "77018-488"
+		}
+	}
+]
