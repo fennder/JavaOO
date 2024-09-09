@@ -1,10 +1,10 @@
 package atividades.unidade3.genericos;
 
-public class ExemplosGenericos<T> {
+public class ExemplosGenerics<T> {
 	
 	T obj;
 
-	public ExemplosGenericos(T obj) {
+	public ExemplosGenerics(T obj) {
 		super();
 		this.obj = obj;
 	}

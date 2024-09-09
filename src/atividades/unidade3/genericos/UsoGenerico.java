@@ -4,10 +4,10 @@ public class UsoGenerico {
 
 	public static void main(String[] args) {
 		
-		ExemplosGenericos<Integer> iob = new ExemplosGenericos<>(88);
+		ExemplosGenerics<Integer> iob = new ExemplosGenerics<>(88);
 		iob.showType();
 		
-		ExemplosGenericos<String> sob = new ExemplosGenericos<>("Edir");
+		ExemplosGenerics<String> sob = new ExemplosGenerics<>("Edir");
 		sob.showType();
 		
 //		if(iob.showType().equals(sob.showType())) 
