@@ -21,4 +21,8 @@ public class ExemplosGenerics<T> {
 	{
 		System.out.println(obj.getClass().getName());
 	}
+	
+	public void showInformation() {
+		System.out.println(obj);
+	}
 }

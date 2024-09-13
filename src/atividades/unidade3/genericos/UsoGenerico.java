@@ -6,9 +6,11 @@ public class UsoGenerico {
 		
 		ExemplosGenerics<Integer> iob = new ExemplosGenerics<>(88);
 		iob.showType();
+		iob.showInformation();
 		
-		ExemplosGenerics<String> sob = new ExemplosGenerics<>("Edir");
+		ExemplosGenerics<String> sob = new ExemplosGenerics<>("Edir Pereira");
 		sob.showType();
+		sob.showInformation();
 		
 //		if(iob.showType().equals(sob.showType())) 
 //		{

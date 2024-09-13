@@ -26,5 +26,10 @@ public class LoginUser <T,V>{
 		System.out.println(obj1.getClass().getName());
 		System.out.println(obj2.getClass().getName());
 	}
+	
+	public void showInformation() {
+		System.out.println(obj1);
+		System.out.println(obj2);
+	}
 
 }

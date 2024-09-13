@@ -7,13 +7,16 @@ public class Stats<T extends Number> {
 		super();
 		this.num = num;
 	}
-	double media() {
-		int i = 0;
-		double soma = 0;
-		for (int j = 0; j < num.length; j++) {
-			soma = soma + num[j].doubleValue();
+	public double media() {
+		if (num == null || num.length == 0) {
+			throw new IllegalArgumentException("Array is empty ou not initialized.");
 		}
-		return (soma/i);
+		
+		double soma = 0;
+		for (T value : num) {
+			soma = value.doubleValue();
+		}
+		return (soma/num.length);
 	}
 
 }
