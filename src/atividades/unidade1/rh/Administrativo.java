@@ -1,5 +1,5 @@
 package atividades.unidade1.rh;
 
-public class Administrativo {
-
+public class Administrativo extends Funcionario{
+	
 }
