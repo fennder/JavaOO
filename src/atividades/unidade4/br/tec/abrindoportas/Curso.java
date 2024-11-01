@@ -1,6 +1,7 @@
 package atividades.unidade4.br.tec.abrindoportas;
 
 public class Curso {
+	
 	String nome;
 
 	public Curso(String nome) {
