@@ -17,7 +17,7 @@ public class LambdaApp {
 
 		}*/
 		
-		integers.forEach((Integer x)->System.out.println(x));
+		//integers.forEach((Integer x)->System.out.println(x));
 		
 		integers.forEach((Integer x)->
 		{
