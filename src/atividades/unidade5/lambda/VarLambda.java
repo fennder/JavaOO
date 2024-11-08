@@ -3,6 +3,7 @@ package atividades.unidade5.lambda;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
 
+
 public class VarLambda {
 
 	public static void main(String[] args) {
