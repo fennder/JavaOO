@@ -1,5 +1,7 @@
-package atividades.unidade4.br.tec.abrindoportas;
+package atividades.unidade5.br.tec.abrindoportas;
 
+import java.util.HashSet;
+import java.util.Set;
 
 public class Cliente {
 	

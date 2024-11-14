@@ -25,7 +25,7 @@ public class VarLambda {
 		String resultado2 = concatenar.apply("Resultado ", "11");
 		
 		System.out.println(resultado1);
-		System.out.println(resultado1);
+		System.out.println(resultado2);
 		
 		Predicate<Integer> maiorQueDez = (var x) -> x > 10;
 		

@@ -20,5 +20,30 @@ public class Curso {
 	public String toString() {
 		return "Curso [nome=" + nome + "]";
 	}
+	public int getCdCurso() {
+		return cdCurso;
+	}
+	public void setCdCurso(int cdCurso) {
+		this.cdCurso = cdCurso;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public double getValor() {
+		return valor;
+	}
+	public void setValor(double valor) {
+		this.valor = valor;
+	}
+	public Path getUrl() {
+		return url;
+	}
+	public void setUrl(Path url) {
+		this.url = url;
+	}
 
+	
 }
