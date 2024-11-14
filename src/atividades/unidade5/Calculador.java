@@ -1,6 +1,6 @@
 package atividades.unidade5;
 
-public class Calculador {
+public class Calculador implements Formula{
 
 	public static void main(String[] args) {
 		IMatematica objeto = new IMatematica() {
@@ -49,6 +49,12 @@ public class Calculador {
 		System.out.println("Executando o método exponênciação = " + objeto.exponenciacao(5, 5));
 		System.out.println("Executando o método radiciação = " + objeto.radiciacao(5, 5));
 
+	}
+
+	@Override
+	public double calcular() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
