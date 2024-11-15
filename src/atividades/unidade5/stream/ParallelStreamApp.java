@@ -15,21 +15,21 @@ public class ParallelStreamApp {
 	private static void colecaoParallelStream() {
 		
 		List<String> valores = new ArrayList<>();
-		int max =100;
+		int max =1_000_000;
 		
 		for (int i = 0; i < max; i++) {
-			valores.add("=>"+i);
+			valores.add("Valor => " + i);
 		}
 		long t0 = System.currentTimeMillis();
 		valores.parallelStream().sorted().forEach(System.out::println);
 		long t1 = System.currentTimeMillis();
-		System.out.println("Tempo consumido " + (t1-t0));
+		System.out.println("Tempo consumido '" + ((t1-t0)/60000) + " minutos e " + ((t1-t0)/1000) + "' segundos.");
 	}
 
 	private static void colecaoStream() {
 		
 		List<String> valores = new ArrayList<>();
-		int max =1_000_000;
+		int max =100;
 		
 		for (int i = 0; i < max; i++) {
 			valores.add("=>"+i);
@@ -37,7 +37,7 @@ public class ParallelStreamApp {
 		long t0 = System.currentTimeMillis();
 		valores.stream().sorted().forEach(System.out::println);
 		long t1 = System.currentTimeMillis();
-		System.out.println("Tempo consumido " + (t1-t0));
+		System.out.println("Tempo consumido " + ((t1-t0)/60000) + " minutos e " + ((t1-t0)/1000) + "' segundos.");
 		
 	}
 
