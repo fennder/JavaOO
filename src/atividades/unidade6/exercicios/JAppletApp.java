@@ -1,4 +1,4 @@
-package atividades.unidade6;
+package atividades.unidade6.exercicios;
 
 import javax.swing.*;
 import javax.swing.JOptionPane;
