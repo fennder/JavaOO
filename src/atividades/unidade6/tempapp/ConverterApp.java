@@ -1,6 +1,7 @@
 package atividades.unidade6.tempapp;
 
 import java.awt.Container;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
@@ -15,7 +16,8 @@ public class ConverterApp {
 		JFrame frame = new JFrame("Celcius Converter");
 		frame.setSize(500,400);
 		Container container = frame.getContentPane();
-		container.setLayout(new GridLayout(2,2));
+		//container.setLayout(new GridLayout(2,2));
+		container.setLayout(new FlowLayout());
 		container.add(new JTextField("O"));
 		container.add(new JLabel("Celcius"));
 		container.add(new JButton("Converter"));
