@@ -2,6 +2,9 @@ package atividades.unidade4.collection;
 
 import java.util.HashSet;
 
+/*
+*Imprime A lista
+*/ 
 public class HashSetApp {
 	public static void main(String[] args) {
 		HashSet<String> lista = new HashSet<>();
